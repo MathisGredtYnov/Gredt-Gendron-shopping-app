@@ -1,0 +1,160 @@
+{
+  "Homme": {
+    "pantalon": [
+      {
+      "id": 1,
+      "name": "Pantalon chino slim pour hommes",
+      "price": 45,
+      "devise": "€",
+      "colors": "NAVY",
+      "reduction": 10,
+      "img_1": "assets/img/pantalon/pantalon2/img1.jpg",
+      "img_2": "assets/img/pantalon/pantalon2/img2.jpg",
+      "img_3": "assets/img/pantalon/pantalon2/img3.jpg",
+      "available": true,
+      "sizes": "S;M;L;XL",
+      "description": "Un pantalon chino slim pour hommes avec une coupe ajustée et moderne. Fabriqué en toile de qualité, ce pantalon offre un look élégant et décontracté. Parfait pour toutes les occasions, il se porte facilement avec une chemise pour un style habillé ou avec un t-shirt pour un look plus décontracté. Disponible en couleur navy, avec une réduction de 10%, ce pantalon est à la fois stylé et abordable."
+      },
+      
+      {
+      "id": 2,
+      "name": "Pantalon en toile slim pour hommes",
+      "price": 50,
+      "devise": "€",
+      "colors": "NOIR",
+      "reduction": 0,
+      "img_1": "assets/img/pantalon/pantalon1/img1.jpg",
+      "img_2": "assets/img/pantalon/pantalon1/img2.jpg",
+      "img_3": "assets/img/pantalon/pantalon1/img3.jpg",
+      "available": true,
+      "sizes": "S;M;L;XL",
+      "description": "Un pantalon en toile slim pour hommes, parfait pour un look décontracté et tendance. Avec sa coupe ajustée et sa couleur noire intemporelle, ce pantalon est idéal pour toutes les saisons. Fabriqué en toile de qualité, il offre un grand confort tout en restant stylé. Polyvalent et facile à porter, ce pantalon sera un ajout essentiel à votre garde-robe."
+      },
+      
+      {
+      "id": 3,
+      "name": "Pantalon cargo pour hommes",
+      "price": 55,
+      "devise": "€",
+      "colors": "KAKI",
+      "reduction": 15,
+      "img_1": "assets/img/pantalon/pantalon3/img1.jpg",
+      "img_2": "assets/img/pantalon/pantalon3/img2.jpg",
+      "img_3": "assets/img/pantalon/pantalon3/img3.jpg",
+      "available": true,
+      "sizes": "S;M;L;XL",
+      "description": "Un pantalon cargo pour hommes avec un style moderne et fonctionnel. Doté de multiples poches pour un rangement pratique, ce pantalon est parfait pour les activités en plein air et les aventures urbaines. Fabriqué en toile résistante, il offre un grand confort et une grande durabilité. Disponible en couleur kaki avec une réduction de 15%, ce pantalon cargo allie style et praticité pour un look tendance et polyvalent."
+      },
+      
+      {
+      "id": 4,
+      "name": "Pantalon de jogging pour hommes",
+      "price": 40,
+      "devise": "€",
+      "colors": "GRIS",
+      "reduction": 5,
+      "img_1": "assets/img/pantalon/pantalon4/img1.jpg",
+      "img_2": "assets/img/pantalon/pantalon4/img2.jpg",
+      "img_3": "assets/img/pantalon/pantalon4/img3.jpg",
+      "available": true,
+      "sizes": "S;M;L;XL",
+      "description": "Un pantalon de jogging pour hommes, parfait pour un look décontracté et confortable. Fabriqué en tissu doux et extensible, ce pantalon offre une grande liberté de mouvement. Idéal pour les activités sportives ou pour se détendre à la maison, ce pantalon de jogging est à la fois pratique et stylé. Disponible en couleur gris avec une réduction de 5%, ce pantalon est un choix parfait pour ceux qui recherchent le confort sans sacrifier le style."
+      },
+      
+      {
+      "id": 5,
+      "name": "Pantalon en lin pour hommes",
+      "price": 60,
+      "devise": "€",
+      "colors": "BEIGE",
+      "reduction": 0,
+      "img_1": "assets/img/pantalon/pantalon5/img1.jpg",
+      "img_2": "assets/img/pantalon/pantalon5/img2.jpg",
+      "img_3": "assets/img/pantalon/pantalon5/img3.jpg",
+      "available": true,
+      "sizes": "S;M;L;XL",
+      "description": "Un pantalon en lin pour hommes, parfait pour les journées chaudes d'été. Fabriqué en lin léger et respirant, ce pantalon offre un grand confort et une grande fraîcheur par temps chaud. Avec sa couleur beige intemporelle, il est facile à assortir avec d'autres vêtements et accessoires. Polyvalent et élégant, ce pantalon en lin est idéal pour les occasions décontractées et les sorties estivales."
+      } 
+    ]
+  },
+
+  "Femme" : {
+    "pantalon": [
+    {
+      "id": 6,
+      "name": "Pantalon en jean skinny pour femmes",
+      "price": 50,
+      "devise": "€",
+      "colors": "BLEU",
+      "reduction": 0,
+      "img_1": "assets/img/pantalon-femme/pantalon1/img1.jpg",
+      "img_2": "assets/img/pantalon-femme/pantalon1/img2.jpg",
+      "img_3": "assets/img/pantalon-femme/pantalon1/img3.jpg",
+      "available": true,
+      "sizes": "XS;S;M;L",
+      "description": "Un pantalon en jean skinny pour femmes, parfait pour un look tendance et décontracté. Fabriqué en denim de haute qualité, ce pantalon offre un ajustement parfait et met en valeur les courbes féminines. Avec sa couleur bleu classique, il est facile à assortir avec d'autres vêtements et accessoires. Ce pantalon en jean est un incontournable de la garde-robe pour celles qui recherchent un style moderne et confortable au quotidien."
+      },
+      
+      {
+      "id": 7,
+      "name": "Pantalon palazzo pour femmes",
+      "price": 55,
+      "devise": "€",
+      "colors": "NOIR",
+      "reduction": 15,
+      "img_1": "assets/img/pantalon-femme/pantalon2/img1.jpg",
+      "img_2": "assets/img/pantalon-femme/pantalon2/img2.jpg",
+      "img_3": "assets/img/pantalon-femme/pantalon2/img3.jpg",
+      "available": true,
+      "sizes": "S;M;L",
+      "description": "Un pantalon palazzo pour femmes, parfait pour un look élégant et sophistiqué. Fabriqué en tissu fluide et léger, ce pantalon offre un grand confort et une grande liberté de mouvement. Avec sa coupe ample et sa taille haute, il met en valeur la silhouette et apporte une touche de glamour à toute tenue. Disponible en couleur noir avec une réduction de 15%, ce pantalon palazzo est un choix idéal pour les occasions spéciales et les sorties chics."
+      },
+
+
+      {
+      "id": 8,
+      "name": "Pantalon cargo pour femmes",
+      "price": 65,
+      "devise": "€",
+      "colors": "KAKI",
+      "reduction": 0,
+      "img_1": "assets/img/pantalon-femme/pantalon3/img1.jpg",
+      "img_2": "assets/img/pantalon-femme/pantalon3/img2.jpg",
+      "img_3": "assets/img/pantalon-femme/pantalon3/img3.jpg",
+      "available": true,
+      "sizes": "XS;S;M;L;XL",
+      "description": "Un pantalon cargo pour femmes, parfait pour un look décontracté et urbain. Fabriqué en coton de haute qualité, ce pantalon offre un confort optimal et une grande résistance. Avec ses multiples poches pratiques et sa coupe ample, il est à la fois fonctionnel et stylé. La couleur kaki lui confère une touche de militaire tendance, et il est idéal pour les activités en plein air et les aventures urbaines. Un choix parfait pour celles qui aiment un style streetwear avec une touche de féminité."
+      },
+        
+      {
+      "id": 9,
+      "name": "Pantalon cigarette pour femmes",
+      "price": 75,
+      "devise": "€",
+      "colors": "GRIS",
+      "reduction": 10,
+      "img_1": "assets/img/pantalon-femme/pantalon4/img1.jpg",
+      "img_2": "assets/img/pantalon-femme/pantalon4/img2.jpg",
+      "img_3": "assets/img/pantalon-femme/pantalon4/img3.jpg",
+      "available": true,
+      "sizes": "S;M;L",
+      "description": "Un pantalon cigarette pour femmes, parfait pour un look chic et professionnel. Fabriqué en tissu de haute qualité, ce pantalon offre une coupe ajustée et flatteuse. Avec sa couleur gris élégante et sa réduction de 10%, il est idéal pour les occasions formelles et les tenues de bureau. Sa silhouette étroite et sa longueur cheville en font un choix polyvalent pour les femmes qui recherchent un pantalon classique et intemporel pour leur garde-robe."
+      },
+
+      {
+      "id": 10,
+      "name": "Pantalon large à rayures pour femmes",
+      "price": 55,
+      "devise": "€",
+      "colors": "BLEU/BLANC",
+      "reduction": 20,
+      "img_1": "assets/img/pantalon-femme/pantalon6/img1.jpg",
+      "img_2": "assets/img/pantalon-femme/pantalon6/img2.jpg",
+      "img_3": "assets/img/pantalon-femme/pantalon6/img3.jpg",
+      "available": true,
+      "sizes": "S;M;L",
+      "description": "Un pantalon large à rayures pour femmes, parfait pour un look décontracté et tendance. Fabriqué en coton léger, ce pantalon offre un confort optimal et une grande respirabilité. Avec ses rayures bleues et blanches à la fois classiques et modernes, il est idéal pour les occasions estivales et les sorties décontractées. Sa coupe large et fluide offre une grande liberté de mouvement, et sa réduction de 20% en fait un choix abordable et stylé pour les femmes qui aiment la mode casual chic."
+        }
+    ]
+  }
+}
