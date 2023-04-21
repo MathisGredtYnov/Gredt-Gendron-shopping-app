@@ -10,20 +10,24 @@ app.use(cors());{
 }
 
 //routes//
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+
 app.get('/pantalons', (req, res) => {
-    const pantalons = data.pantalons;
+    const pantalons = data.Homme.pantalons;
     res.json(pantalons);
 });
 
 app.get('/pantalons/:id', (req, res) => {
     const id = req.params.id;
-    const pantalons = data.pantalons;
+    const pantalons = data.Homme.pantalons;
     const pantalon = pantalons.find(pantalon => pantalon.id == id);
     if (!pantalons){
         res.status(404).send('Pantalon not found');
     } else {
         res.status(200).json(pantalon);
-        message = "Pantalon found";
+        message = 'Pantalon found'
         pantalons = pantalon;
     }
 });
