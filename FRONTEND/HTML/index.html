@@ -12,25 +12,48 @@
         <div class="header">
             <div class="logo">
                 <a href="/" class="logo">
-                <img src="images/icones/logo.svg" alt="logo">
                 <p>StyleVerse</p>
                 </a>
             </div>
-        <div class="lien">
-            <input class="menu_button" type="checkbox" id="menu_button">
-            <label for="menu_button">
-                <img src="images/menu.svg" alt="menu" class="burger">
-                <img src="images/close.svg" alt="close" class="close">
-            </label>
-            <nav class="menu">
-                <ul>
-                <li><a href="/categorie">Achat</a></li>
-                <li><a href="/panier">Location</a></li>
-                </ul>
-            </nav>
+            <div class="lien">
+                <input class="menu_button" type="checkbox" id="menu_button">
+                <label for="menu_button">
+                    <img src="../ASSETS/IMG/menu.svg" alt="menu" class="burger">
+                    <img src="../ASSETS/IMG/close.svg" alt="close" class="close">
+                </label>
+                <nav class="menu">
+                    <ul>
+                    <li><a href="/categorie">Categorie</a></li>
+                    <li><a href="/panier">Panier</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class = "WithOutHeader">
+            <div class="first_content">
+                <form action="/" class="search_bar">
+                    <input type="text" autofocus class="search_input" name="search" placeholder="Cherchez par marque, modèle, catégorie...">
+                    <div class="search_icons">
+                        <img src="../ASSETS/IMG/rod.svg" alt="rod" class="rod">
+                        <button type="submit" class="search_button">
+                            <img src="../ASSETS/IMG/search.svg" alt="search" class="search_button_icon">
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class = "color_picker_ctn">
+                <div class = "picker round all selected">all</div>
+                <div class = "picker round white">white</div>
+                <div class = "picker round black">black</div>
+                <div class = "picker round red">red</div>
+                <div class = "picker round blue">blue</div>
+                <div class = "picker round grey">grey</div>
+            </div>
+            <div class = "second_content">
+
+            </div>
         </div>
     </div>
-    </div>
-    <script src="../../BACKEND/JS/script.js"></script>
+    <script src="../JS/page.js"></script>
 </body>
 </html>

@@ -1,12 +1,20 @@
 body {
     margin: 0px;
     padding: 0px;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    font-family: 'Migha';
 }
 
+.background {
+    height: 100%;
+    width: 100%;
+}
 
 /* header */
 .header {
-    background-color: #232429;
+    background-color: #A9907E;
     color: #ffffff;
     padding: 10px;
     height: 75px;
@@ -22,7 +30,7 @@ body {
 .logo p {
     font-weight: 700;
     font-size: 2.8em;
-    color: #195FA5;
+    color: #000000;
 }
 .logo img {
     padding-right: 10px;
@@ -40,20 +48,105 @@ body {
     display: none;
 }
 li {
-    padding: 0px 10px;
+    padding: 0px 15px;
     display: inline;
     font-size: 1.5em;
-    color: #ffffff;
+    color: #000000;
     font-weight: 400;
 }
 a {
     text-decoration: none;
-    color: #ffffff;
-}
-a:hover {
-    color: #195FA5;
+    color: #000000;
 }
 /* Header End */
+/* début page index */
+
+.WithOutHeader {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.first_content {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.search_bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ABC4AA;
+    padding: 10px 20px;
+    width: 60%;
+    max-width: 700px;
+    min-width: 300px;
+    border-radius: 20px;
+}
+
+.search_input {
+    background: none;
+    border: none;
+    font-size: 1.6em;
+    width: 100%;
+    height: 100%;
+    color: #A5A5A5;
+    outline: none;
+}
+
+.search_icons {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.search_button_icon {
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.search_button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+input::placeholder {
+    color: #000000;
+}
+
+input:focus, .search_input:focus {
+    outline: none;
+}
+
+.color_picker_ctn {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.round {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blue { background-color: #00f; }
+.red { background-color: #f00; }
+.grey { background-color: #ccc; }
+.white { background-color: #fff; }
+.black { background-color: #000; }
 
 
 @media screen and (max-width: 991px) {

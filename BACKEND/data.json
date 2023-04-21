@@ -1,6 +1,6 @@
 {
   "Homme": {
-    "pantalon": [
+    "pantalons": [
       {
       "id": 1,
       "name": "Pantalon chino slim pour hommes",
@@ -79,7 +79,7 @@
   },
 
   "Femme" : {
-    "pantalon": [
+    "pantalons": [
     {
       "id": 6,
       "name": "Pantalon en jean skinny pour femmes",
