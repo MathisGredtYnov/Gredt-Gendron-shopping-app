@@ -148,6 +148,14 @@ input:focus, .search_input:focus {
 .white { background-color: #fff; }
 .black { background-color: #000; }
 
+.second_content {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 @media screen and (max-width: 991px) {
     /* Header */
