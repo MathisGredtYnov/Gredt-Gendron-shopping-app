@@ -15,8 +15,14 @@ app.get('/', (req, res) => {
 });
 
 app.get('/pantalons', (req, res) => {
-    const pantalons = data.Homme.pantalons;
-    res.json(pantalons);
+    const pantalonsHomme = data.Homme.pantalons;
+    const pantalonsFemme = data.Femme.pantalons;
+
+    const pantalonsData = {
+        homme: pantalonsHomme,
+        femme: pantalonsFemme,
+    };
+    res.json(pantalonsData);
 });
 
 app.get('/pantalons/:id', (req, res) => {
