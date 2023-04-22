@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #CACACA;
+}
+
+header {
+    background-color: #00747C;
+    height: 100px;
+    width: 100%;
+}   
+
+header h1 {
+    color: #202022;
+    padding-top: 30px;
+}
+
