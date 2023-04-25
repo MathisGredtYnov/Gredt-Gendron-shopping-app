@@ -148,12 +148,19 @@ input:focus, .search_input:focus {
 .white { background-color: #fff; }
 .black { background-color: #000; }
 
+
+/*affichage des données*/
 .second_content {
     height: 50%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.second_content img {
+    height: 100px;
+    width: 100px;
 }
 
 
