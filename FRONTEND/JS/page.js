@@ -3,25 +3,45 @@ const ip_add = "localhost";
 const url = `http://${ip_add}:${port}`;
 const container = document.querySelector(".second_content");
 const pickers = document.querySelectorAll(".picker");
+const pantalon_button = document.querySelectorAll(".pantalon_button");
 
 let pantalons
 let filteredPantalons
 
-// Fetching data from the server
-function GetPantalons() {
+pantalon_button.forEach(button => {
+    button.addEventListener("click", () => {
+        GetPantalons(button.dataset.sexe);
+        setTimeout(() => {
+            DisplayPantalons();
+        }, 100);
+
+    });
+});
+
+function GetAllPantalons() {
     fetch(url + "/pantalons")
         .then((response) => response.json())
         .then((data) => {
-            pantalons = data;
+            const pantalonsFemme = data.Femme.pantalons;
+            const pantalonsHomme = data.Homme.pantalons;
+            const pantalons = pantalonsFemme.concat(pantalonsHomme);
             filteredPantalons = pantalons;
-            console.log(data);
-            DisplayPantalons();
+        });
+}
+
+// Fetching data from the server
+function GetPantalons(sexe) {
+    fetch(url + "/pantalons/" + sexe)
+        .then((response) => response.json())
+        .then((data) => {
+            filteredPantalons = data;
         });
 }
 
 // Displaying data from the server
 function DisplayPantalons() {
     container.innerHTML = "";
+    console.log(filteredPantalons);
     filteredPantalons.forEach(pantalon => {
         let pantalonCTN = document.createElement("div");
         pantalonCTN.classList.add("pantalon_item");
@@ -39,33 +59,26 @@ function DisplayPantalons() {
 
 // Filtering data from the server
 pickers.forEach(picker => {    
-    picker.addEventListener("click", SelectItem);
-});
-
-function SelectItem(e){
-    let picker = e.target;
-    let color = e.target.classList[2];
-    pickers.forEach((e) => {
-        e.classList.remove("selected");
+    picker.addEventListener("click", () => {
+        filterByColor(picker.classList[2]);
+        setTimeout(() => {
+            DisplayPantalons();
+        }, 100);
     });
-    picker.classList.add("selected");
-    console.log(color);
-    filterByColor(color);
-}
+});
 
 // Filtering data color 
 function filterByColor(color){
-    if (color === "all"){
-        filteredPantalons = pantalons;
-        DisplayPantalons();
-    } else {
-        filteredPantalons = pantalons.filter(pantalon => pantalon.colors === color);
-        container.innerHTML = "";
-        if (filteredPantalons.length <= 0){
-            container.innerHTML = `
-                <h3>Aucun pantalon trouvé</h3>`;   
-        } else {
-            DisplayPantalons();
+    GetAllPantalons();
+    setTimeout(() => {
+        if (color !== "all"){
+            filteredPantalons = filteredPantalons.filter(pantalon => pantalon.colors === color);
+            container.innerHTML = "";
+            if (filteredPantalons.length <= 0){
+                container.innerHTML = `
+                    <h3>Aucun pantalon trouvé</h3>`;   
+            }
         }
-    }
+    }, 100);
+    
 }
