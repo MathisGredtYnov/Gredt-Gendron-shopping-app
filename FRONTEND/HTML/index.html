@@ -23,23 +23,31 @@
                 </label>
                 <nav class="menu">
                     <ul>
-                    <li><a href="/categorie">Categorie</a></li>
-                    <li><a href="/panier">Panier</a></li>
+                    <li><a href="../HTML/categorie.html">Categorie</a></li>
+                    <li><a href="../HTML/panier.html">Panier</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
         <div class = "WithOutHeader">
             <div class="first_content">
-                <form action="/" class="search_bar">
-                    <input type="text" autofocus class="search_input" name="search" placeholder="Cherchez par marque, modèle, catégorie...">
-                    <div class="search_icons">
-                        <img src="../ASSETS/IMG/rod.svg" alt="rod" class="rod">
-                        <button type="submit" class="search_button">
-                            <img src="../ASSETS/IMG/search.svg" alt="search" class="search_button_icon">
-                        </button>
-                    </div>
-                </form>
+                <div class = "first_content_up">
+                    <img src="../ASSETS/IMG/cart.png" alt="first_content" class="cart_icon">
+                </div>
+                <div class = "cart_ctn">
+                    
+                </div>
+                <div class = "first_content_down">
+                    <form action="/" class="search_bar">
+                        <input type="text" autofocus class="search_input" name="search" placeholder="Cherchez par marque, modèle, catégorie...">
+                        <div class="search_icons">
+                            <img src="../ASSETS/IMG/rod.svg" alt="rod" class="rod">
+                            <button type="submit" class="search_button">
+                                <img src="../ASSETS/IMG/search.svg" alt="search" class="search_button_icon">
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
             <div class = "color_picker_ctn">
                 <div class = "picker round all selected">all</div>
@@ -48,13 +56,13 @@
                 <div class = "picker round red">red</div>
                 <div class = "picker round blue">blue</div>
                 <div class = "picker round grey">grey</div>
+                <button class = "pantalon_button" data-sexe = "Homme">PantalonsHomme</button> 
+                <button class = "pantalon_button" data-sexe = "Femme">PantalonsFemme</button> 
             </div>
             <div class = "second_content">
                 
 
             </div>
-            <button class = "pantalon_button" data-sexe = "Homme">Pantalons</button> 
-            <button class = "pantalon_button" data-sexe = "Femme">Pantalons</button>  
         </div>
     </div>
     <script src="../JS/page.js"></script>

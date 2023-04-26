@@ -4,6 +4,8 @@ const url = `http://${ip_add}:${port}`;
 const container = document.querySelector(".second_content");
 const pickers = document.querySelectorAll(".picker");
 const pantalon_button = document.querySelectorAll(".pantalon_button");
+const carIcon = document.querySelector(".cart_icon");
+const cartCtn = document.querySelector(".cart_ctn");
 
 let pantalons
 let filteredPantalons
@@ -82,3 +84,58 @@ function filterByColor(color){
     }, 100);
     
 }
+
+function toggleCart(){
+    cartCtn.classList.toggle("open_cart");
+    if (cartCtn.classList.contains("open_cart")){
+        carIcon.src = "../ASSETS/IMG/cross.png";
+    } else {
+        carIcon.src = "../ASSETS/IMG/cart.png";
+    }
+}
+carIcon.addEventListener("click", toggleCart);
+
+let cart = JSON.parse(localStorage.getItem("cart"));
+// Adding data to the cart
+function AddToCart(id){
+    let pantalon = filteredPantalons.find(pantalon => pantalon.id === id);
+    if (cart == null){
+        cart = [];
+    } else {
+        cart.push(pantalon);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        console.log(cart);
+        LoadCart();
+    }
+}
+
+// Displaying data from the cart
+function LoadCart() {
+    cartCtn.innerHTML = "";
+    cart.forEach(pantalon => {
+        cart = document.createElement("div");
+        cart.classList.add("cart_item");
+        cartCtn.innerHTML += `
+            <div class="cart_item"> <img src="${pantalon.img_1}" alt="${pantalon.name}" />
+                <div class="cart_item_body">
+                    <h3>${pantalon.name}</h3>
+                    <p>${pantalon.price}€</p>
+                </div>
+                <button onclick="RemoveFromCart(${pantalon.id})">Supprimer</button>
+            </div>
+        `;
+        cartCtn.appendChild(cart);
+    });
+}
+
+//remove item from cart
+function RemoveFromCart(id){
+    let indexToRemove = cartList.findIndex(pantalon => pantalon.id == id);
+    cartList.splice(indexToRemove, 1);
+    localStorage.setItem("cart", JSON.stringify(cartList));
+    LoadCart();
+    
+}
+
+
+
