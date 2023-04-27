@@ -9,59 +9,12 @@ body {
     font-family: 'Migha';
 }
 
+/* début page index */
 .background {
     height: 100%;
     width: 100%;
 }
 
-/* header */
-.header {
-    background-color: #A9907E;
-    color: #ffffff;
-    padding: 10px;
-    height: 75px;
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
-}
-.logo {
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-.logo p {
-    font-weight: 700;
-    font-size: 2.8em;
-    color: #000000;
-}
-.logo img {
-    padding-right: 10px;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-    display: block;
-}
-.lien {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.menu_button, .menu_button + label  {
-    display: none;
-}
-li {
-    padding: 0px 15px;
-    display: inline;
-    font-size: 1.5em;
-    color: #000000;
-    font-weight: 400;
-}
-a {
-    text-decoration: none;
-    color: #000000;
-}
-/* Header End */
-/* début page index */
 
 .WithOutHeader {
     height: 100%;
@@ -185,43 +138,46 @@ input:focus, .search_input:focus {
 /* affichage du panier*/
 
 .cart_ctn {
-    background-color: #f5f5f5;
+    background-color: #ada0a0;
     position: absolute;
     top: 0;
     right: -500px;
     width: 500px;
+    height: auto;
     max-width: 100vw;
+    min-height: 864px;
     z-index: 10;
-    height: 100vh;
-    padding-top: 80px;
-    transition: all 0.5s ease;
-    }
+    margin-top: 75px;
+    transition: all 0.5s ease-in-out;
+    overflow: auto;
     
-    .cart_icon {
-    height: 100px;
-    width: 100px;
-    z-index: 900;
-    }
+}
     
-    .open_cart {
-    right: 0;
-    }
-    
-    .cart_item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    font-size: 16px;
-    line-height: 1.5;
-    border-bottom: 1px solid #ccc;
-    }
-    
-    .cart_item img {
-    width: 80px;
-    height: 80px;
-    margin-right: 10px;
-    }
+.cart_icon {
+height: 50px;
+width: 50px;
+z-index: 900;
+}
+
+.open_cart {
+right: 0;
+}
+
+.cart_item {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 20px;
+font-size: 16px;
+line-height: 1.5;
+border-bottom: 1px solid #ccc;
+}
+
+.cart_item img {
+width: 80px;
+height: 80px;
+margin-right: 10px;
+}
 
 /* Affichage des cartes des produits */
 
@@ -229,8 +185,8 @@ input:focus, .search_input:focus {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 300px;
-    height: 400px;
+    width: 320px;
+    height: 420px;
     margin: 20px;
     padding: 20px;
     border: 1px solid #ccc;
@@ -240,9 +196,9 @@ input:focus, .search_input:focus {
 
   .pantalon_item img {
     max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  margin-bottom: 20px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
   }
 
   .pantalon_description {
@@ -256,9 +212,6 @@ input:focus, .search_input:focus {
   .pantalon_description h1 {
     height: 100px;
     overflow-y: scroll;
-  }
-
-  .pantalon_description h1 {
     font-size: 0.9rem;
     text-align: center;
   }
@@ -279,57 +232,21 @@ input:focus, .search_input:focus {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   }
 
+  .pantalon_description h1::-webkit-scrollbar, body::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .pantalon_description h1::-webkit-scrollbar-track, body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  .pantalon_description h1::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+  }
+  
+  .pantalon_description h1::-webkit-scrollbar-thumb:hover, body::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
 
 /* fin affichage des cartes de produits */
-
-
-@media screen and (max-width: 991px) {
-    /* Header */
-    .menu_button, .menu_button + label  {
-        display: block;
-    }
-    .menu_button + label {
-        cursor: pointer;
-    }
-    .menu_button + label .close {
-        display: none;
-    }
-    .menu_button + label .burger {
-        display: block;
-    }
-    .menu_button:checked + label .close {
-        display: block;
-    }
-    .menu_button:checked + label .burger {
-        display: none;
-    }
-    .menu {
-        background-color: #232429;
-        position: absolute;
-        top: 75px;
-        right: 0px;
-        border-bottom-left-radius: 10px;
-        padding: 0px 0px 10px 10px;
-        display: none;
-    }
-    .menu_button {
-        opacity: 0;
-    }
-    ul {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 100%;
-        width: 100%;
-    }
-    li {
-        padding: 10px;
-        font-size: 1.5em;
-        text-align: right;
-        border-top: 1px solid #195FA5;
-    }
-    .menu_button:checked ~ .menu {
-        display: block;
-    }
-    /* Header End */
-}

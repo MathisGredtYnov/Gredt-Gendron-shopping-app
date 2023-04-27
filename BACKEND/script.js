@@ -11,7 +11,8 @@ app.use(cors());{
 
 //routes//
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    const pantalons = data;
+    res.json(pantalons);
 });
 
 app.get('/pantalons', (req, res) => {

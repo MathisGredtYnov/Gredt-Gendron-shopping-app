@@ -55,7 +55,7 @@ function DisplayPantalons() {
                 <h3>${pantalon.name}</h3>
                 <p>${pantalon.price}€</p>
                 <h1>${pantalon.description}</h1>
-                <button onclick="AddToCart(${pantalon.id})">Ajouter au panier</button>
+                <button onclick="AddToCart(${pantalon.id}); toggleCart();setTimeout(() => {toggleCart();}, 1500);" class="add_to_cart">Ajouter au panier</button>
             </div>
         `;
         container.appendChild(pantalonCTN);
@@ -106,10 +106,10 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 // Adding data to the cart
 function AddToCart(id){
-    let pantalon = filteredPantalons.find(pantalon => pantalon.id === id);
-    cart.push(pantalon);
+    let pantalonChoice = filteredPantalons.find(pantalon => pantalon.id === id);
+    console.log("oui" + pantalonChoice)
+    cart.push(pantalonChoice);
     localStorage.setItem("cart", JSON.stringify(cart));
-    console.log(cart);
     LoadCart();
 }
 
@@ -117,18 +117,19 @@ function AddToCart(id){
 function LoadCart() {
     cartCtn.innerHTML = "";
     cart.forEach(pantalon => {
-        cart = document.createElement("div");
-        cart.classList.add("cart_item");
-        cartCtn.innerHTML += `
-            <div class="cart_item"> <img src="${pantalon.img_1}" alt="${pantalon.name}" />
-                <div class="cart_item_body">
-                    <h3>${pantalon.name}</h3>
-                    <p>${pantalon.price}€</p>
-                </div>
+        let cartItem = document.createElement("div");
+        cartItem.classList.add("cart_item");
+        cartItem.innerHTML = `
+            <div class="cart_image">
+                <img src="${pantalon.img_1}" alt="${pantalon.name}" />
+            </div>
+            <div class="cart_description">
+                <h3>${pantalon.name}</h3>
+                <p>${pantalon.price}€</p>
                 <button onclick="RemoveFromCart(${pantalon.id})">Supprimer</button>
             </div>
         `;
-        cartCtn.appendChild(cart);
+        cartCtn.appendChild(cartItem);
     });
 }
 
