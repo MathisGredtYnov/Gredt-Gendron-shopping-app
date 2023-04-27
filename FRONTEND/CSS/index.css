@@ -1,7 +1,11 @@
-body {
+* {
+    box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    overflow: hidden;
+}
+
+body {
+    overflow-x: hidden;
     font-family: 'Migha';
 }
 
@@ -169,7 +173,8 @@ input:focus, .search_input:focus {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: space-around;
+    flex-wrap: wrap;
 }
 
 .second_content img {
@@ -180,34 +185,102 @@ input:focus, .search_input:focus {
 /* affichage du panier*/
 
 .cart_ctn {
-    background-color: #00f;
+    background-color: #f5f5f5;
     position: absolute;
-    top: 0px;
+    top: 0;
     right: -500px;
     width: 500px;
     max-width: 100vw;
     z-index: 10;
     height: 100vh;
     padding-top: 80px;
-    transition: all 0.5s ease; 
-}
-
-.cart_icon {
+    transition: all 0.5s ease;
+    }
+    
+    .cart_icon {
     height: 100px;
     width: 100px;
     z-index: 900;
-}
-
-.open_cart {
-    right: 0px;
-}
-
-.cart_item {
+    }
+    
+    .open_cart {
+    right: 0;
+    }
+    
+    .cart_item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-}
+    font-size: 16px;
+    line-height: 1.5;
+    border-bottom: 1px solid #ccc;
+    }
+    
+    .cart_item img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    }
+
+/* Affichage des cartes des produits */
+
+.pantalon_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 400px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .pantalon_item img {
+    max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 20px;
+  }
+
+  .pantalon_description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  .pantalon_description h1 {
+    height: 100px;
+    overflow-y: scroll;
+  }
+
+  .pantalon_description h1 {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .pantalon_description button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .pantalon_description button:hover {
+    background-color: #3e8e41;
+    transform: translateY(-3px);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+
+/* fin affichage des cartes de produits */
 
 
 @media screen and (max-width: 991px) {

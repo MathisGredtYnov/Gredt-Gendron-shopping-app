@@ -47,11 +47,14 @@ function DisplayPantalons() {
     filteredPantalons.forEach(pantalon => {
         let pantalonCTN = document.createElement("div");
         pantalonCTN.classList.add("pantalon_item");
-        container.innerHTML += `
-            <img src="${pantalon.img_1}" alt="${pantalon.name}" />
-            <div class="card-body">
+        pantalonCTN.innerHTML = `
+            <div class="pantalon_image">
+                <img src="${pantalon.img_1}" alt="${pantalon.name}" />
+            </div>
+            <div class="pantalon_description">
                 <h3>${pantalon.name}</h3>
                 <p>${pantalon.price}€</p>
+                <h1>${pantalon.description}</h1>
                 <button onclick="AddToCart(${pantalon.id})">Ajouter au panier</button>
             </div>
         `;
@@ -85,6 +88,7 @@ function filterByColor(color){
     
 }
 
+//change the cart icon
 function toggleCart(){
     cartCtn.classList.toggle("open_cart");
     if (cartCtn.classList.contains("open_cart")){
@@ -93,20 +97,20 @@ function toggleCart(){
         carIcon.src = "../ASSETS/IMG/cart.png";
     }
 }
+
+//event listener
 carIcon.addEventListener("click", toggleCart);
 
-let cart = JSON.parse(localStorage.getItem("cart"));
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
 // Adding data to the cart
 function AddToCart(id){
     let pantalon = filteredPantalons.find(pantalon => pantalon.id === id);
-    if (cart == null){
-        cart = [];
-    } else {
-        cart.push(pantalon);
-        localStorage.setItem("cart", JSON.stringify(cart));
-        console.log(cart);
-        LoadCart();
-    }
+    cart.push(pantalon);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    console.log(cart);
+    LoadCart();
 }
 
 // Displaying data from the cart
@@ -130,9 +134,9 @@ function LoadCart() {
 
 //remove item from cart
 function RemoveFromCart(id){
-    let indexToRemove = cartList.findIndex(pantalon => pantalon.id == id);
-    cartList.splice(indexToRemove, 1);
-    localStorage.setItem("cart", JSON.stringify(cartList));
+    let indexToRemove = cart.find(pantalon => pantalon.id == id);
+    cart.splice(indexToRemove, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
     LoadCart();
     
 }
