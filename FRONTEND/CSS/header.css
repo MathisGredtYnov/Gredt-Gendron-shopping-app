@@ -93,7 +93,7 @@ a {
     .menu_button:checked ~ .menu {
         display: block;
     }
+
     /* Header End */
     /* Scroll bar */
-
-    /* Personnalisation de la barre de scroll */
+}
