@@ -49,17 +49,21 @@ function DisplayPantalons() {
         pantalonCTN.classList.add("pantalon_item");
         pantalonCTN.innerHTML = `
             <div class="pantalon_image">
-                <img src="${pantalon.img_1}" alt="${pantalon.name}" />
+                <img src="${pantalon.img_1}" alt="${pantalon.name}" onmouseenter="this.src='${pantalon.img_2}'" onmouseleave="this.src='${pantalon.img_1}'" />
             </div>
             <div class="pantalon_description">
                 <h3>${pantalon.name}</h3>
-                <p>${pantalon.price}€</p>
-                <h1>${pantalon.description}</h1>
+                <p>${pantalon.reduction ? `<span class="prix_barre">${pantalon.price}${pantalon.devise}</span> <span class="prix_reduit">${pantalon.price - (pantalon.price * pantalon.reduction / 100)}${pantalon.devise} (${pantalon.reduction}% de réduction)</span>` : `${pantalon.price}${pantalon.devise}`}</p>
                 <button onclick="AddToCart(${pantalon.id}); toggleCart();setTimeout(() => {toggleCart();}, 1500);" class="add_to_cart">Ajouter au panier</button>
+                <button onclick="window.location.href='detail.html?id=${pantalon.id}';" class="details_button">Plus de détails</button>
             </div>
         `;
         container.appendChild(pantalonCTN);
     });
+}
+
+function changeImage(img, newSrc) {
+    img.src = newSrc;
 }
 
 // Filtering data from the server
@@ -122,13 +126,15 @@ function AddToCart(id){
 // Displaying data from the cart
 function LoadCart() {
     cartCtn.innerHTML = "";
-    let cartCounts = {}; // create an object to keep track of product counts
+    let cartCounts = {};
+    let totalPrice = 0;
     cart.forEach(pantalon => {
         if (cartCounts[pantalon.id]) {
             cartCounts[pantalon.id] += pantalon.quantity;
         } else {
             cartCounts[pantalon.id] = 1;
         }
+        totalPrice += calculateTotalPriceWithReduction(pantalon);
     });
 
     Object.entries(cartCounts).forEach(([id, count]) => {
@@ -141,26 +147,42 @@ function LoadCart() {
             </div>
             <div class="cart_description">
                 <h3>${pantalon.name}</h3>
-                <p>${pantalon.price}€</p>
                 <div class="cart_counter">
                     <button onclick="RemoveOneFromCart(${pantalon.id})">-</button>
                     <span>${countDuplicates(cart, pantalon)}</span>
                     <button onclick="AddToCart(${pantalon.id})">+</button>
                 </div>
-                <p>${pantalon.totalPrice * count}€</p>
+                <p>${calculateTotalPriceWithReduction(pantalon) * count}€</p>
                 <button onclick="RemoveFromCart(${pantalon.id})">Supprimer</button>
             </div>
         `;
         cartCtn.appendChild(cartItem);
     });
+
+    let totalPriceElement = document.createElement("p");
+    totalPriceElement.classList.add("total_price");
+    totalPriceElement.textContent = "Total: " + totalPrice + "€";
+    cartCtn.appendChild(totalPriceElement);
+
+    let commanderButton = document.createElement("button");
+    commanderButton.classList.add("commander");
+    commanderButton.textContent = "Commander";
+    cartCtn.appendChild(commanderButton);
 }
 
 //remove item from cart
-function RemoveFromCart(id){
-    let indexToRemove = cart.findIndex(pantalon => pantalon.id == id);
-    if (indexToRemove >= 0) {
-        cart.splice(indexToRemove, 1);
+function RemoveFromCart(id) {
+    const indexToRemove = cart.findIndex((pantalon) => pantalon.id == id);
+    if (indexToRemove === -1) {
+        return;
     }
+    const pantalonToRemove = cart[indexToRemove];
+    const pantalonCount = countDuplicates(cart, pantalonToRemove);
+
+    cart.splice(indexToRemove, 1);
+
+    // Mettre à jour le prix total de l'article en fonction de la quantité
+    pantalonToRemove.totalPrice = pantalonToRemove.price * pantalonCount * (1 - pantalonToRemove.discount / 100);
     localStorage.setItem("cart", JSON.stringify(cart));
     LoadCart();
 }
@@ -172,11 +194,13 @@ function RemoveOneFromCart(id) {
     }
     const pantalonToRemove = cart[indexToRemove];
     pantalonToRemove.quantity--;
-    if (pantalonToRemove.quantity <= 0) {
+
+    if (pantalonToRemove.quantity === 0) {
         cart.splice(indexToRemove, 1);
     }
+
     // Mettre à jour le prix total de l'article en fonction de la quantité
-    pantalonToRemove.totalPrice = pantalonToRemove.price * pantalonToRemove.quantity;
+    pantalonToRemove.totalPrice = pantalonToRemove.price * pantalonToRemove.quantity * (1 - pantalonToRemove.discount / 100);
     localStorage.setItem("cart", JSON.stringify(cart));
     LoadCart();
 }
@@ -184,4 +208,10 @@ function RemoveOneFromCart(id) {
 function countDuplicates(arr, value) {
     const product = arr.find(p => p.id === value.id);
     return product ? product.quantity : 0;
-  }
+}
+
+function calculateTotalPriceWithReduction(pantalon) {
+    const total = pantalon.price * pantalon.quantity;
+    const reduction = pantalon.reduction || 0;
+    return total - (total * reduction / 100);
+}
