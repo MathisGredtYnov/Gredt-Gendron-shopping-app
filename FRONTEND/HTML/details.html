@@ -8,15 +8,50 @@
     <link  type="text/css" rel="stylesheet" href="../CSS/details.css">
 </head>
 <body>
-    <header>
-        <h1>STEELVERSE</h1>
+   <header>
+        <h1>STYLEVERSE</h1>
     </header>
- <div class="out_header">
-    <div class="container_img">
-
+    <div class="out_header">
+        <div class="left_part">
+            <div class="container_carrousel">
+                <div class="carrousel">
+                    <img src="image1.jpg" alt="Image 1" id="image-principale">
+                    <div class="thumbnails">
+                        <button class="thumbnail-btn" data-image="image1.jpg"><img src="image1.jpg" alt="Image 1"></button>
+                        <button class="thumbnail-btn" data-image="image2.jpg"><img src="image2.jpg" alt="Image 2"></button>
+                        <button class="thumbnail-btn" data-image="image3.jpg"><img src="image3.jpg" alt="Image 3"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right_part">
+            <div class="container_detail">
+                <div class="container_marque">
+                    <h1>Marque</h1>
+                    <h1>Modèle</h1>
+                    <h1>Prix</h1>
+                </div>
+                <div class="container_taille">
+                    <div class="select-container">
+                        <select id="taille">
+                            <option value="" disabled selected>Choisir une taille</option>
+                            <option value="XS">XS</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="container_panier">
+                    <button class="ajouter-au-panier-btn">Ajouter au panier</button>
+                </div>
+                <div class="container_description">
+                    <h1>Description</h1>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="container_text">
-        <h2>Mon panier</h2>
- </div>
 </body>
 </html>
