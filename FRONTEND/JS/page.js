@@ -13,34 +13,37 @@ const sexe_picker_ctn = document.querySelector(".sexe_picker_ctn");
 color_picker_ctn.addEventListener("change", GetSelectedValue);
 sexe_picker_ctn.addEventListener("change", GetSelectedValue);
 
-function GetSelectedValue() {
-    let selected_color = document.querySelector(".color_picker_ctn input:checked").value;
-    let selected_sexe = document.querySelector(".sexe_picker_ctn input:checked").value;
-    DataFilter(selected_color, selected_sexe);
-}
-
-
-
-
 let pantalons
 let filteredPantalons
-
 
 GetAllPantalons();
 setTimeout(() => {
     DisplayPantalons();
 }, 100);
 
-/*pantalon_button.forEach(button => {
-    button.addEventListener("click", () => {
-        GetPantalons(button.dataset.sexe);
-        setTimeout(() => {
-            DisplayPantalons();
-        }, 100);
-
-    });
-});
-*/
+function GetSelectedValue() {
+    let selected_color_input = document.querySelector(".color_picker_ctn input:checked");
+    let selected_sexe_input = document.querySelector(".sexe_picker_ctn input:checked");
+    if (selected_color_input && selected_sexe_input) {
+        let selected_color = selected_color_input.value;
+        let selected_sexe = selected_sexe_input.value;
+        if (selected_color === "all" && selected_sexe === "all") {
+            filteredPantalons = pantalons;
+        } else if (selected_color === "all") {
+            filteredPantalons = pantalons.filter(pantalon => pantalon.sexe === selected_sexe);
+        } else if (selected_sexe === "all") {
+            filteredPantalons = pantalons.filter(pantalon => pantalon.colors === selected_color);
+        } else {
+            filteredPantalons = pantalons.filter(pantalon => pantalon.colors === selected_color && pantalon.sexe === selected_sexe);
+        }
+        container.innerHTML = "";
+        if (filteredPantalons.length <= 0) {
+            container.innerHTML = `
+                <h3>Aucun pantalon trouvé</h3>`;
+        }
+        DisplayPantalons();
+    }
+}
 
 function GetAllPantalons() {
     fetch(url + "/pantalons")
@@ -53,17 +56,6 @@ function GetAllPantalons() {
             console.log(error);
         })
 }
-
-// Fetching data from the server
-/*
-function GetPantalons(sexe) {
-    fetch(url + "/pantalons/" + sexe)
-        .then((response) => response.json())
-        .then((data) => {
-            filteredPantalons = data;
-        });
-}
-*/
 
 // Displaying data from the server
 function DisplayPantalons() {
@@ -90,30 +82,21 @@ function changeImage(img, newSrc) {
     img.src = newSrc;
 }
 
-
-
-
-
 // Filtering data by sexe and color
 function DataFilter(sexe, color){
-    //GetAllPantalons();
-    console.log(sexe)
-    console.log(color)
     if (color === "all") {
-        console.log("we pass")
         filteredPantalons = pantalons;
     } else if (color !== "all") {
-        console.log("filtering color")
         filteredPantalons = pantalons.filter(pantalon => pantalon.colors === color);
     }
-    console.log("after color :", filteredPantalons)
     filteredPantalons = filteredPantalons.filter(pantalon => pantalon.sexe === sexe);
-    console.log("after sexe :", filteredPantalons)
     container.innerHTML = "";
+    console.log(filteredPantalons);
     if (filteredPantalons.length <= 0){
         container.innerHTML = `
             <h3>Aucun pantalon trouvé</h3>`;
     }
+    DisplayPantalons();
 }
 
 //change the cart icon
