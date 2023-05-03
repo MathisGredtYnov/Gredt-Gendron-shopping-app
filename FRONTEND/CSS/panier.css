@@ -11,21 +11,6 @@ body {
     overflow: hidden;
 }
 
-/*header*/
-
-header {
-    background-color: #86A69D;
-    height: 100px;
-    width: 100%;
-}
-
-header h1 {
-    color: #F2C6C2;
-    padding-top: 30px;
-}
-
-/*fin header*/
-
 .out_header {
     background-color: #9E9E9E;
     height: 100%;
