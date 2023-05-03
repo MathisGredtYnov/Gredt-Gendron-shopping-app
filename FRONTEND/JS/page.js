@@ -2,16 +2,36 @@ const port = 3000;
 const ip_add = "localhost";
 const url = `http://${ip_add}:${port}`;
 const container = document.querySelector(".second_content");
-const pickers = document.querySelectorAll(".picker");
 const pantalon_button = document.querySelectorAll(".pantalon_button");
 const carIcon = document.querySelector(".cart_icon");
 const cartCtn = document.querySelector(".cart_ctn");
 const filterImg = document.querySelector(".filter");
+const color_picker_ctn = document.querySelector(".color_picker_ctn");
+const sexe_picker_ctn = document.querySelector(".sexe_picker_ctn");
+
+
+color_picker_ctn.addEventListener("change", GetSelectedValue);
+sexe_picker_ctn.addEventListener("change", GetSelectedValue);
+
+function GetSelectedValue() {
+    let selected_color = document.querySelector(".color_picker_ctn input:checked").value;
+    let selected_sexe = document.querySelector(".sexe_picker_ctn input:checked").value;
+    DataFilter(selected_color, selected_sexe);
+}
+
+
+
 
 let pantalons
 let filteredPantalons
 
-pantalon_button.forEach(button => {
+
+GetAllPantalons();
+setTimeout(() => {
+    DisplayPantalons();
+}, 100);
+
+/*pantalon_button.forEach(button => {
     button.addEventListener("click", () => {
         GetPantalons(button.dataset.sexe);
         setTimeout(() => {
@@ -20,19 +40,22 @@ pantalon_button.forEach(button => {
 
     });
 });
+*/
 
 function GetAllPantalons() {
     fetch(url + "/pantalons")
         .then((response) => response.json())
         .then((data) => {
-            const pantalonsFemme = data.Femme.pantalons;
-            const pantalonsHomme = data.Homme.pantalons;
-            const pantalons = pantalonsFemme.concat(pantalonsHomme);
+            pantalons = data.Femme.pantalons.concat(data.Homme.pantalons);
             filteredPantalons = pantalons;
-        });
+        })
+        .catch(error => {
+            console.log(error);
+        })
 }
 
 // Fetching data from the server
+/*
 function GetPantalons(sexe) {
     fetch(url + "/pantalons/" + sexe)
         .then((response) => response.json())
@@ -40,6 +63,7 @@ function GetPantalons(sexe) {
             filteredPantalons = data;
         });
 }
+*/
 
 // Displaying data from the server
 function DisplayPantalons() {
@@ -53,7 +77,7 @@ function DisplayPantalons() {
             </div>
             <div class="pantalon_description">
                 <h3>${pantalon.name}</h3>
-                <p>${pantalon.reduction ? `<span class="prix_barre">${pantalon.price}${pantalon.devise}</span> <span class="prix_reduit">${pantalon.price - (pantalon.price * pantalon.reduction / 100)}${pantalon.devise} (${pantalon.reduction}% de réduction)</span>` : `${pantalon.price}${pantalon.devise}`}</p>
+                <p>${pantalon.reduction ? `<span class="prix_barre">${pantalon.price}${pantalon.devise}</span> <span class="prix_reduit">${pantalon.price - (pantalon.price * pantalon.reduction / 100)}${pantalon.devise} (- ${pantalon.reduction}%)</span>` : `${pantalon.price}${pantalon.devise}`}</p>
                 <button onclick="AddToCart(${pantalon.id}); toggleCart();setTimeout(() => {toggleCart();}, 1500);" class="add_to_cart">Ajouter au panier</button>
                 <button onclick="window.location.href='detail.html?id=${pantalon.id}';" class="details_button">Plus de détails</button>
             </div>
@@ -66,30 +90,30 @@ function changeImage(img, newSrc) {
     img.src = newSrc;
 }
 
-// Filtering data from the server
-pickers.forEach(picker => {    
-    picker.addEventListener("click", () => {
-        filterByColor(picker.classList[2]);
-        setTimeout(() => {
-            DisplayPantalons();
-        }, 100);
-    });
-});
 
-// Filtering data color 
-function filterByColor(color){
-    GetAllPantalons();
-    setTimeout(() => {
-        if (color !== "all"){
-            filteredPantalons = filteredPantalons.filter(pantalon => pantalon.colors === color);
-            container.innerHTML = "";
-            if (filteredPantalons.length <= 0){
-                container.innerHTML = `
-                    <h3>Aucun pantalon trouvé</h3>`;   
-            }
-        }
-    }, 100);
-    
+
+
+
+// Filtering data by sexe and color
+function DataFilter(sexe, color){
+    //GetAllPantalons();
+    console.log(sexe)
+    console.log(color)
+    if (color === "all") {
+        console.log("we pass")
+        filteredPantalons = pantalons;
+    } else if (color !== "all") {
+        console.log("filtering color")
+        filteredPantalons = pantalons.filter(pantalon => pantalon.colors === color);
+    }
+    console.log("after color :", filteredPantalons)
+    filteredPantalons = filteredPantalons.filter(pantalon => pantalon.sexe === sexe);
+    console.log("after sexe :", filteredPantalons)
+    container.innerHTML = "";
+    if (filteredPantalons.length <= 0){
+        container.innerHTML = `
+            <h3>Aucun pantalon trouvé</h3>`;
+    }
 }
 
 //change the cart icon
@@ -104,7 +128,6 @@ function toggleCart(){
 
 //event listener
 carIcon.addEventListener("click", toggleCart);
-
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 // Adding data to the cart
@@ -149,11 +172,11 @@ function LoadCart() {
                 <h3>${pantalon.name}</h3>
                 <div class="cart_counter">
                     <button onclick="RemoveOneFromCart(${pantalon.id})">-</button>
-                    <span>${countDuplicates(cart, pantalon)}</span>
+                    <span class ="counter">${countDuplicates(cart, pantalon)}</span>
                     <button onclick="AddToCart(${pantalon.id})">+</button>
                 </div>
                 <p>${calculateTotalPriceWithReduction(pantalon) * count}€</p>
-                <button onclick="RemoveFromCart(${pantalon.id})">Supprimer</button>
+                <button class = "supr" onclick="RemoveFromCart(${pantalon.id})">Supprimer</button>
             </div>
         `;
         cartCtn.appendChild(cartItem);

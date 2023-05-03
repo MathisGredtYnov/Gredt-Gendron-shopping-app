@@ -30,7 +30,6 @@ app.get('/pantalons/Femme', (req, res) => {
     res.json(pantalons);
 });
 
-
 //lancement du serveur//
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}"`);
