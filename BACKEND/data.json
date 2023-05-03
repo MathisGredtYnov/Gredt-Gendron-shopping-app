@@ -84,14 +84,83 @@
       "available": true,
       "sizes": "S;M;L;XL",
       "description": "Un pantalon en lin pour hommes, parfait pour les journées chaudes d'été. Fabriqué en lin léger et respirant, ce pantalon offre un grand confort et une grande fraîcheur par temps chaud. Avec sa couleur beige intemporelle, il est facile à assortir avec d'autres vêtements et accessoires. Polyvalent et élégant, ce pantalon en lin est idéal pour les occasions décontractées et les sorties estivales."
-      } 
+      },
+      
+      {
+        "id": 6,
+        "name": "Pantalon cargo décontracté pour hommes",
+        "price": 55,
+        "totalPrice": 0,
+        "devise": "€",
+        "colors": "khaki",
+        "sexe": "homme",
+        "reduction": 5,
+        "img_1": "https://www.cdiscount.com/pdt2/5/3/4/1/1200x1200/mp27531534/rw/pantalon-cargo-double-en-polaire-pour-hommes-en-mo.jpg",
+        "img_2":  "https://www.cdiscount.com/pdt2/5/3/4/2/1200x1200/mp27531534/rw/pantalon-cargo-double-en-polaire-pour-hommes-en-mo.jpg",
+        "img_3":  "https://www.cdiscount.com/pdt2/5/3/4/3/1200x1200/mp27531534/rw/pantalon-cargo-double-en-polaire-pour-hommes-en-mo.jpg",
+        "available": true,
+        "sizes": "S;M;L;XL",
+        "description": "Ce pantalon cargo décontracté pour hommes est un incontournable pour un look décontracté et tendance. Fabriqué en toile de qualité, ce pantalon offre une coupe confortable et un style polyvalent. Disponible en couleur kaki, avec une réduction de 5%, ce pantalon est idéal pour les hommes à la recherche d'un style décontracté et pratique."
+        },
+        
+        {
+        "id": 7,
+        "name": "Pantalon de jogging en molleton pour hommes",
+        "price": 40,
+        "totalPrice": 0,
+        "devise": "€",
+        "colors": "grey",
+        "sexe": "homme",
+        "reduction": 15,
+        "img_1": "https://www.cdiscount.com/pdt2/7/5/0/1/1200x1200/mp49641750/rw/jack-jones-pantalon-de-survetement-gris-clair-ch.jpg",
+        "img_2":  "https://www.cdiscount.com/pdt2/7/5/0/2/1200x1200/mp49641750/rw/jack-jones-pantalon-de-survetement-gris-clair-ch.jpg",
+        "img_3":  "https://www.cdiscount.com/pdt2/7/5/0/3/1200x1200/mp49641750/rw/jack-jones-pantalon-de-survetement-gris-clair-ch.jpg",
+        "available": true,
+        "sizes": "S;M;L;XL",
+        "description": "Ce pantalon de jogging en molleton pour hommes est un incontournable pour un confort optimal et un style sportif. Fabriqué en molleton doux, ce pantalon offre une coupe ajustée et un design élégant. Disponible en couleur gris, avec une réduction de 15%, ce pantalon est idéal pour les hommes à la recherche d'un style sportif et confortable."
+        },
+        
+        {
+        "id": 8,
+        "name": "Pantalon en lin beige pour hommes",
+        "price": 60,
+        "totalPrice": 0,
+        "devise": "€",
+        "colors": "beige",
+        "sexe": "homme",
+        "reduction": 0,
+        "img_1":  "https://cdn.laredoute.com/products/f/d/e/fde5caa8a05dab493a5e7a9cd217a010.jpg?width=900&dpr=1",
+        "img_2":  "https://cdn.laredoute.com/products/2/7/d/27d202c514b2878d8a31268d80b43e2c.jpg?width=900&dpr=1",
+        "img_3":  "https://cdn.laredoute.com/products/2/9/f/29fddd6fb0fb72408a149cd8b52fc8ae.jpg?width=900&dpr=1",
+        "available": true,
+        "sizes": "S;M;L;XL",
+        "description": "Ce pantalon en lin pour hommes est un incontournable pour un look élégant et décontracté pendant les mois chauds. Fabriqué en lin de qualité, ce pantalon offre une coupe confortable et une texture légère et respirante. Disponible en couleur beige, ce pantalon est idéal pour les hommes à la recherche d'un style élégant et décontracté pour les beaux jours."
+        },
+        
+        {
+        "id": 9,
+        "name": "Pantalon de costume slim pour hommes",
+        "price": 80,
+        "totalPrice": 0,
+        "devise": "€",
+        "colors": "navy",
+        "sexe": "homme",
+        "reduction": 20,
+        "img_1":"https://static.kiabi.com/images/pantalon-de-costume-slim-bleu-marine-homme-du-s-au-xxl-te006_2_frb1.jpg",
+        "img_2":"https://static.kiabi.com/images/pantalon-de-costume-slim-bleu-marine-homme-du-s-au-xxl-te006_2_frb2.jpg",
+        "img_3":"https://static.kiabi.com/images/pantalon-de-costume-slim-bleu-marine-homme-du-s-au-xxl-te006_2_frb3.jpg",
+        "available": true,
+        "sizes": "S;M;L;XL",
+        "description": "Ce pantalon de costume slim pour hommes est un incontournable pour un look élégant et professionnel. Fabriqué en tissu de qualité, ce pantalon offre une coupe ajustée et une allure sophistiquée. Disponible en couleur bleu marine, avec une réduction de 20%, ce pantalon est idéal pour les hommes à la recherche d'un style formel et élégant."
+        }
+        
     ]
   },
 
   "Femme" : {
     "pantalons": [
     {
-      "id": 6,
+      "id": 10,
       "name": "Pantalon en jean skinny pour femmes",
       "price": 50,
       "totalPrice": 0,
@@ -108,7 +177,7 @@
       },
       
       {
-      "id": 7,
+      "id": 11,
       "name": "Pantalon palazzo pour femmes",
       "price": 55,
       "totalPrice": 0,
@@ -126,7 +195,7 @@
 
 
       {
-      "id": 8,
+      "id": 12,
       "name": "Pantalon cargo pour femmes",
       "price": 65,
       "totalPrice": 0,
@@ -143,7 +212,7 @@
       },
         
       {
-      "id": 9,
+      "id": 13,
       "name": "Pantalon cigarette pour femmes",
       "price": 75,
       "totalPrice": 0,
@@ -160,7 +229,7 @@
       },
 
       {
-      "id": 10,
+      "id": 14,
       "name": "Pantalon large à rayures pour femmes",
       "price": 55,
       "totalPrice": 0,
@@ -169,12 +238,81 @@
       "sexe" : "femme",
       "reduction": 20,
       "img_1": "https://cdn.laredoute.com/products/d/1/c/d1c1dba6ff6b2ba740a3b0b93da90e5a.jpg?width=100&dpr=1",
-      "img_2": "https://cdn.laredoute.com/products/d/7/1/d71b7bf15564a6b1f49a43cf5b9ed500.jpg?width=100&dpr=1",
+      "img_2": "https://cdn.laredoute.com/products/6/7/1/6711e131e5d67c2d0b9c0f3c0f8d5855.jpg?width=900&dpr=1",
       "img_3": "https://cdn.laredoute.com/products/f/2/8/f2865c95bc00f9a3727babb113b054b4.jpg?width=100&dpr=1",
       "available": true,
       "sizes": "S;M;L",
       "description": "Un pantalon large à rayures pour femmes, parfait pour un look décontracté et tendance. Fabriqué en coton léger, ce pantalon offre un confort optimal et une grande respirabilité. Avec ses rayures noirs et blanches à la fois classiques et modernes, il est idéal pour les occasions estivales et les sorties décontractées. Sa coupe large et fluide offre une grande liberté de mouvement, et sa réduction de 20% en fait un choix abordable et stylé pour les femmes qui aiment la mode casual chic."
-        }
+        },
+
+        {
+        "id": 15,
+        "name": "Pantalon large taille haute pour femmes",
+        "price": 60,
+        "totalPrice": 0,
+        "devise": "€",
+        "colors": "black",
+        "sexe": "femme",
+        "reduction": 10,
+        "img_1":  "https://www.cdiscount.com/pdt2/0/8/1/1/065x065/mp47917081/rw/jeans-pantalon-large-taille-mi-haute-pour-femmes-d.jpg",
+        "img_2":  "https://www.cdiscount.com/pdt2/0/8/1/1/1200x1200/mp47917081/rw/jeans-pantalon-large-taille-mi-haute-pour-femmes-d.jpg",
+        "img_3":  "https://www.cdiscount.com/pdt2/0/8/1/3/1200x1200/mp47917081/rw/jeans-pantalon-large-taille-mi-haute-pour-femmes-d.jpg",
+        "available": true,
+        "sizes": "XS;S;M;L",
+        "description": "Ce pantalon large taille haute pour femmes est parfait pour un look chic et confortable. Fabriqué en tissu de qualité, ce pantalon offre une coupe ample et une silhouette élégante. Disponible en couleur noir, avec une réduction de 10%, ce pantalon est idéal pour les femmes à la recherche d'un style sophistiqué et confortable."
+        },
+
+        {
+          "id": 16,
+          "name": "Legging sport pour femmes",
+          "price": 35,
+          "totalPrice": 0,
+          "devise": "€",
+          "colors": "black",
+          "sexe": "femme",
+          "reduction": 5,
+          "img_1":  "https://cdn.shopify.com/s/files/1/1310/7037/products/Legging-deportivo-compresivo-Ica-Black-Legging-Black-Limba-3.jpg?v=1678793067",
+          "img_2":  "https://cdn.shopify.com/s/files/1/1310/7037/products/Legging-deportivo-compresivo-Ica-Black-Legging-Black-Limba-4.jpg?v=1678793073",
+          "img_3":    "https://cdn.shopify.com/s/files/1/1310/7037/products/Legging-deportivo-compresivo-Ica-Black-Legging-Black-Limba-5.jpg?v=1678793078",
+          "available": true,
+          "sizes": "XS;S;M;L",
+          "description": "Ce legging sport pour femmes est un incontournable pour les activités sportives et de détente. Fabriqué en tissu stretch de qualité, ce legging offre une coupe ajustée et un confort optimal. Disponible en couleur noir, avec une réduction de 5%, ce legging est idéal pour les femmes à la recherche d'un style sportif et confortable."
+          },
+
+          {
+            "id": 17,
+            "name": "Pantalon palazzo vert pour femmes",
+            "price": 65,
+            "totalPrice": 0,
+            "devise": "€",
+            "colors": "green",
+            "sexe": "femme",
+            "reduction": 0,
+            "img_1":"https://cdn.laredoute.com/products/c/6/6/c6684ed8c97bed7acdc771be32732cab.jpg?width=900&dpr=1",
+            "img_2":"https://cdn.laredoute.com/products/9/3/b/93bda68a2e185e8aa38bb5866867c680.jpg?width=900&dpr=1", 
+            "img_3":"https://cdn.laredoute.com/products/d/6/e/d6ed135dfa160f89a452b5c185a227bb.jpg?width=900&dpr=1",
+            "available": true,
+            "sizes": "XS;S;M;L",
+            "description": "Ce pantalon palazzo pour femmes est un choix élégant pour un look chic et décontracté. Fabriqué en tissu léger, ce pantalon offre une coupe ample et une silhouette fluide. Disponible en couleur verte, ce pantalon est idéal pour les femmes à la recherche d'un style élégant et confortable pour toutes les occasions."
+            },
+
+            {
+              "id": 18,
+              "name": "Pantalon cigarette red pour femmes",
+              "price": 70,
+              "totalPrice": 0,
+              "devise": "€",
+              "colors": "red",
+              "sexe": "femme",
+              "reduction": 10,
+              "img_1":"https://www.graindemalice.fr/dw/image/v2/BJXR_PRD/on/demandware.static/-/Sites-GDM-FR-master-catalog/default/dwc976334e/images/847314_6630_1.jpg?sw=1562&sh=1800&sm=fit",
+              "img_2":"https://www.graindemalice.fr/dw/image/v2/BJXR_PRD/on/demandware.static/-/Sites-GDM-FR-master-catalog/default/dw7315c025/images/847314_6630_2.jpg?sw=1562&sh=1800&sm=fit",
+              "img_3":"https://www.graindemalice.fr/dw/image/v2/BJXR_PRD/on/demandware.static/-/Sites-GDM-FR-master-catalog/default/dwacdb1bd8/images/847314_6630_3.jpg?sw=1562&sh=1800&sm=fit",
+              "available": true,
+              "sizes": "XS;S;M;L",
+              "description": "Ce pantalon cigarette pour femmes est un choix sophistiqué pour un look professionnel et élégant. Fabriqué en tissu de qualité, ce pantalon offre une coupe ajustée et une silhouette élancée. Disponible en couleur rouge, avec une réduction de 10%, ce pantalon est idéal pour les femmes à la recherche d'un style élégant et moderne pour le travail ou les événements formels."
+              }
+              
     ]
   }
 }
