@@ -190,7 +190,15 @@ body {
     border: 2px solid #000;
     border-left: none;
     border-bottom: none;
-    transition: border-color 0.2s ease-in-out;
+    transition: border-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  }
+  
+  .price_picker_ctn .price_button.up::before {
+    transform: rotate(315deg) translate(-3px, 3px);
+  }
+  
+  .price_picker_ctn .price_button.down::before {
+    transform: rotate(135deg) translate(-3px, 3px);
   }
 
 /*affichage des données*/
