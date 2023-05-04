@@ -6,15 +6,13 @@ const pantalon_button = document.querySelectorAll(".pantalon_button");
 const carIcon = document.querySelector(".cart_icon");
 const cartCtn = document.querySelector(".cart_ctn");
 const filterImg = document.querySelector(".filter");
-const color_picker_ctn = document.querySelector(".color_picker_ctn");
-const sexe_picker_ctn = document.querySelector(".sexe_picker_ctn");
-
-
-color_picker_ctn.addEventListener("change", GetSelectedValue);
-sexe_picker_ctn.addEventListener("change", GetSelectedValue);
 
 let pantalons
 let filteredPantalons
+
+document.querySelector(".color_picker_ctn").addEventListener("change", GetSelectedValue);
+document.querySelector(".sexe_picker_ctn").addEventListener("change", GetSelectedValue);
+document.querySelector(".price_picker_ctn").addEventListener("change", GetSelectedOrder);
 
 GetAllPantalons();
 setTimeout(() => {
@@ -44,6 +42,27 @@ function GetSelectedValue() {
         DisplayPantalons();
     }
 }
+
+//SortByPrice
+function GetSelectedOrder() {
+    let selected_price = document.querySelector(".price_picker_ctn input:checked").value;
+    console.log(selected_price)
+    if (selected_price === "ascending") {
+        console.log(filteredPantalons)
+        console.log("tri croissant")
+        filteredPantalons.sort((a, b) => calculateTotalPriceWithReduction(a) - calculateTotalPriceWithReduction(b));
+        console.log(filteredPantalons)
+        DisplayPantalons();
+    } else if (selected_price === "descending") {
+        console.log("tri decroissant")
+        filteredPantalons.sort((a, b) => calculateTotalPriceWithReduction(b) - calculateTotalPriceWithReduction(a));
+        DisplayPantalons();
+    } else {
+        alert("c'est pas bien de bidouiller le code")
+    }
+}
+    
+
 
 function GetAllPantalons() {
     fetch(url + "/pantalons")
@@ -80,23 +99,6 @@ function DisplayPantalons() {
 
 function changeImage(img, newSrc) {
     img.src = newSrc;
-}
-
-// Filtering data by sexe and color
-function DataFilter(sexe, color){
-    if (color === "all") {
-        filteredPantalons = pantalons;
-    } else if (color !== "all") {
-        filteredPantalons = pantalons.filter(pantalon => pantalon.colors === color);
-    }
-    filteredPantalons = filteredPantalons.filter(pantalon => pantalon.sexe === sexe);
-    container.innerHTML = "";
-    console.log(filteredPantalons);
-    if (filteredPantalons.length <= 0){
-        container.innerHTML = `
-            <h3>Aucun pantalon trouvé</h3>`;
-    }
-    DisplayPantalons();
 }
 
 //change the cart icon
@@ -194,11 +196,11 @@ function RemoveFromCart(id) {
 }
 
 function RemoveOneFromCart(id) {
-    const indexToRemove = cart.findIndex((pantalon) => pantalon.id == id);
+    let indexToRemove = cart.findIndex((pantalon) => pantalon.id == id);
     if (indexToRemove === -1) {
         return;
     }
-    const pantalonToRemove = cart[indexToRemove];
+    let pantalonToRemove = cart[indexToRemove];
     pantalonToRemove.quantity--;
 
     if (pantalonToRemove.quantity === 0) {
@@ -212,12 +214,15 @@ function RemoveOneFromCart(id) {
 }
 
 function countDuplicates(arr, value) {
-    const product = arr.find(p => p.id === value.id);
+    let product = arr.find(p => p.id === value.id);
     return product ? product.quantity : 0;
 }
 
 function calculateTotalPriceWithReduction(pantalon) {
-    const total = pantalon.price * pantalon.quantity;
-    const reduction = pantalon.reduction || 0;
+    let total = pantalon.price;
+    if (pantalon.quantity > 0) {
+        total *= pantalon.quantity;
+    }
+    let reduction = pantalon.reduction || 0;
     return total - (total * reduction / 100);
 }
