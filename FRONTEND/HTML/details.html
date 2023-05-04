@@ -15,11 +15,11 @@
         <div class="left_part">
             <div class="container_carrousel">
                 <div class="carrousel">
-                    <img src="image1.jpg" alt="Image 1" id="image-principale">
-                    <div class="thumbnails">
-                        <button class="thumbnail-btn" data-image="image1.jpg"><img src="image1.jpg" alt="Image 1"></button>
-                        <button class="thumbnail-btn" data-image="image2.jpg"><img src="image2.jpg" alt="Image 2"></button>
-                        <button class="thumbnail-btn" data-image="image3.jpg"><img src="image3.jpg" alt="Image 3"></button>
+                    <img src="" alt="Image principale" id="image-container">
+                    <div class="buttons" id="button-container">
+                        <button class="thumbnail-btn" onclick="changeImage(0)"><img src="image1_thumbnail.jpg" alt="Thumbnail 1"></button>
+                        <button class="thumbnail-btn" onclick="changeImage(1)"><img src="image2_thumbnail.jpg" alt="Thumbnail 2"></button>
+                        <button class="thumbnail-btn" onclick="changeImage(2)"><img src="image3_thumbnail.jpg" alt="Thumbnail 3"></button>
                     </div>
                 </div>
             </div>
@@ -48,10 +48,14 @@
                     <button class="ajouter-au-panier-btn">Ajouter au panier</button>
                 </div>
                 <div class="container_description">
-                    <h1>Description</h1>
+                    <p id="short-description">Description courte...</p>
+                    <p id="full-description" hidden>Description complète...</p>
+                    <button id="toggle-description" onclick="toggleDescription()">Voir plus</button>
                 </div>
             </div>
         </div>
     </div>
+    <script src="../JS/details.js"></script>
+    <script src="../JS/page.js"></script>
 </body>
 </html>

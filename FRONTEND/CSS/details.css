@@ -14,7 +14,8 @@ body {
 /*header*/
 
 header {
-    background-color: #86A69D;
+    background-color: #591C21;
+    color: #ffffff;
     height: 100px;
     width: 100%;
 }
@@ -27,7 +28,7 @@ header h1 {
 /*fin header*/
 
 .out_header {
-    background-color: #ff0000;
+  background-color: #d5dbe3;
     height: 100%;
     width: 100%;
     display: flex;
@@ -37,7 +38,7 @@ header h1 {
 /*left part*/
 
 .left_part {
-    background-color: #2fff00;
+  background-color: #d5dbe3;
     height: 100%;
     width: 50%;
     display: flex;
@@ -47,7 +48,7 @@ header h1 {
 }
 
 .container_carrousel {
-    background-color: #0008ff;
+    background-color: #8C1F28;
     height: 700px;
     width: 800px; 
     display: flex;
@@ -56,36 +57,7 @@ header h1 {
 
 /*carrousel*/
 
-.carrousel {
-    text-align: center;
-}
 
-#image-principale {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    object-fit: cover;
-}
-
-.thumbnails {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.thumbnail-btn {
-    border: none;
-    background: none;
-    padding: 0;
-    cursor: pointer;
-}
-
-.thumbnail-btn img {
-    width: 50px;
-    height: auto;
-    object-fit: cover;
-}
 
 /*fin carrousel*/
 
@@ -94,7 +66,7 @@ header h1 {
 /*right part*/
 
 .right_part {
-    background-color: #ff00ff;
+    background-color: #d5dbe3;
     height: 100%;
     width: 50%;
     display: flex;
@@ -104,7 +76,8 @@ header h1 {
 }
 
 .container_detail {
-    background-color: #00eeff;
+    background-color: #8C1F28;
+    color:#ffffff ;
     height: 700px;
     width: 800px;
     display: flex;
@@ -113,7 +86,7 @@ header h1 {
 }
 
 .container_marque {
-    background-color: #f89900;
+    background-color: #8C1F28;
     height: 150px;
     width: 800px;
     display: flex;
@@ -123,7 +96,7 @@ header h1 {
 }
 
 .container_taille {
-    background-color: #42f800;
+    background-color: #8C1F28;
     height: 200px;
     width: 800px;
     display: flex;
@@ -143,9 +116,9 @@ select {
     border: 1px solid #ccc;
     border-radius: 4px;
     appearance: none;
-    background-color: #00ddff;
+    background-color: #F2F2F2;
     font-size: 16px;
-    color: #333;
+    color: black;
 }
 
 select:focus {
@@ -165,7 +138,7 @@ select:focus {
 
 /*fin barre selection taille*/
 .container_panier {
-    background-color: #f8f800;
+    background-color: #8C1F28;
     height: 200px;
     width: 800px;
     display: flex;
@@ -175,7 +148,7 @@ select:focus {
 
 .ajouter-au-panier-btn {
     display: inline-block;
-    background-color: #007bff;
+    background-color: #8C1F28;
     color: #ffffff;
     font-size: 1rem;
     font-weight: bold;
@@ -188,16 +161,53 @@ select:focus {
   }
   
   .ajouter-au-panier-btn:hover {
-    background-color: #0056b3;
+    background-color: black;
   }
 
 .container_description {
-    background-color: #0c00f8;
+    background-color: #8C1F28;
     height: 200px;
     width: 800px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.thumbnail-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.thumbnail-btn img {
+    width: 50px;
+    height: auto;
+}
+
+/* Style pour la description et le bouton "Voir plus" */
+#short-description, #full-description {
+    max-width: 700px;
+    text-align: justify;
+}
+
+#toggle-description {
+    background-color: #8C1F28;
+    color: #ffffff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+#toggle-description:hover {
+    background-color: black;
+}
+
+/* Style pour le conteneur des caractéristiques du produit */
+.container_caracteristiques {
+    text-align: left;
 }
 
 /*fin right part*/
