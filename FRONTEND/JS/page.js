@@ -99,7 +99,7 @@ function DisplayPantalons() {
 
 function Details(id){
     localStorage.setItem("details", id);
-    window.location.href = "details.html";
+    window.location.href = "HTML/details.html";
 }
 
 function changeImage(img, newSrc) {
