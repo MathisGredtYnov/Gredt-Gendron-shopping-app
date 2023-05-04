@@ -11,40 +11,21 @@ body {
     overflow: hidden;
 }
 
-/*header*/
-
-header {
-    background-color: #591C21;
-    color: #ffffff;
-    height: 100px;
-    width: 100%;
-}
-
-header h1 {
-    color: #F2C6C2;
-    padding-top: 30px;
-}
-
-/*fin header*/
-
 .out_header {
   background-color: #d5dbe3;
     height: 100%;
     width: 100%;
     display: flex;
-    
 }
 
 /*left part*/
-
 .left_part {
   background-color: #d5dbe3;
     height: 100%;
     width: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: center; 
 }
 
 .container_carrousel {
@@ -52,19 +33,51 @@ header h1 {
     height: 700px;
     width: 800px; 
     display: flex;
-    
 }
-
 /*carrousel*/
 
 
 
+.container_carrousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.container_carrousel img {
+    width: 80%;
+    height: 100%;
+}
+
+.arrow-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: color 0.2s ease-in-out;
+}
+  
+.arrow-button:hover {
+    color: #666;
+}
+
+.left-arrow {
+    left: 20px;
+}
+
+.right-arrow {
+    right: 20px;
+}
+
 /*fin carrousel*/
-
 /*fin left part*/
-
 /*right part*/
-
 .right_part {
     background-color: #d5dbe3;
     height: 100%;
@@ -72,7 +85,6 @@ header h1 {
     display: flex;
     align-items:center;
     justify-content: center;
-    
 }
 
 .container_detail {
@@ -91,7 +103,7 @@ header h1 {
     width: 800px;
     display: flex;
     justify-content: center;
-    
+    align-items: center;
     flex-direction: column;
 }
 
@@ -108,7 +120,6 @@ header h1 {
 .select-container {
     position: relative;
     display: inline-block;
-    
 }
 
 select {

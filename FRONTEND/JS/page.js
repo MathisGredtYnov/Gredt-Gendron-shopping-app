@@ -90,11 +90,16 @@ function DisplayPantalons() {
                 <h3>${pantalon.name}</h3>
                 <p>${pantalon.reduction ? `<span class="prix_barre">${pantalon.price}${pantalon.devise}</span> <span class="prix_reduit">${pantalon.price - (pantalon.price * pantalon.reduction / 100)}${pantalon.devise} (- ${pantalon.reduction}%)</span>` : `${pantalon.price}${pantalon.devise}`}</p>
                 <button onclick="AddToCart(${pantalon.id}); toggleCart();setTimeout(() => {toggleCart();}, 1500);" class="add_to_cart">Ajouter au panier</button>
-                <button onclick="window.location.href='detail.html?id=${pantalon.id}';" class="details_button">Plus de détails</button>
+                <button onclick="Details(${pantalon.id});" class="details_button">Plus de détails</button>
             </div>
         `;
         container.appendChild(pantalonCTN);
     });
+}
+
+function Details(id){
+    localStorage.setItem("details", id);
+    window.location.href = "details.html";
 }
 
 function changeImage(img, newSrc) {

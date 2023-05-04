@@ -9,6 +9,13 @@ app.use(cors());{
     origin: '*'
 }
 
+//make a list of pantalons//
+function GetPantalonsListe() {
+    let pantalon_liste;
+    pantalon_liste = data.Homme.pantalons.concat(data.Femme.pantalons);
+    return pantalon_liste;
+}
+    
 //routes//
 app.get('/', (req, res) => {
     const pantalons = data;
@@ -28,6 +35,14 @@ app.get('/pantalons/Homme', (req, res) => {
 app.get('/pantalons/Femme', (req, res) => {
     const pantalons = data.Femme.pantalons;
     res.json(pantalons);
+});
+
+app.get('/pantalon/:id', (req, res) => {
+    let pantalons = GetPantalonsListe();
+    let id = req.params.id;
+    id = Number(id)
+    let pantalon = pantalons.find(pantalon => pantalon.id === id);
+    res.json(pantalon);
 });
 
 //lancement du serveur//

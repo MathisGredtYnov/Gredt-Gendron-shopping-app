@@ -6,30 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Détails</title>
     <link  type="text/css" rel="stylesheet" href="../CSS/details.css">
+    <link  type="text/css" rel="stylesheet" href="../CSS/header.css">
 </head>
 <body>
-   <header>
-        <h1>STYLEVERSE</h1>
-    </header>
+    <div class="header">
+        <div class="logo">
+            <a href="/" class="logo">
+            <p>StyleVerse</p>
+            </a>
+        </div>
+        <div class="lien">
+            <input class="menu_button" type="checkbox" id="menu_button">
+            <label for="menu_button">
+                <img src="../ASSETS/IMG/menu.svg" alt="menu" class="burger">
+                <img src="../ASSETS/IMG/close.svg" alt="close" class="close">
+            </label>
+            <nav class="menu">
+                <ul>
+                <li><a href="../HTML/panier.html">Panier</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
     <div class="out_header">
         <div class="left_part">
             <div class="container_carrousel">
-                <div class="carrousel">
-                    <img src="" alt="Image principale" id="image-container">
-                    <div class="buttons" id="button-container">
-                        <button class="thumbnail-btn" onclick="changeImage(0)"><img src="image1_thumbnail.jpg" alt="Thumbnail 1"></button>
-                        <button class="thumbnail-btn" onclick="changeImage(1)"><img src="image2_thumbnail.jpg" alt="Thumbnail 2"></button>
-                        <button class="thumbnail-btn" onclick="changeImage(2)"><img src="image3_thumbnail.jpg" alt="Thumbnail 3"></button>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="right_part">
             <div class="container_detail">
                 <div class="container_marque">
-                    <h1>Marque</h1>
-                    <h1>Modèle</h1>
-                    <h1>Prix</h1>
+                    
                 </div>
                 <div class="container_taille">
                     <div class="select-container">
