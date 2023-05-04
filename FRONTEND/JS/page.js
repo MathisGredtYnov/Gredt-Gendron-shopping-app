@@ -218,11 +218,13 @@ function RemoveOneFromCart(id) {
     LoadCart();
 }
 
+//Quantité d'articles dans le panier
 function countDuplicates(arr, value) {
     let product = arr.find(p => p.id === value.id);
     return product ? product.quantity : 0;
 }
 
+//Calcul du prix total avec réduction
 function calculateTotalPriceWithReduction(pantalon) {
     let total = pantalon.price;
     if (pantalon.quantity > 0) {
