@@ -65,7 +65,7 @@ body {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 1px solid #000;
+  border: 1px solid #333;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,6 +75,7 @@ body {
 
 .color_picker_ctn > input:checked + label {
   transform: translateY(-2px);
+  border: 1px solid #4CAF50;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3), 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
@@ -84,19 +85,19 @@ body {
 }
 
 .blue {
-  background-color: #00f;
+  background-color: #47628a;
 }
 
 .red {
-  background-color: #f00;
+  background-color: #ca2220;
 }
 
 .grey {
-  background-color: #ccc;
+  background-color: #c6cac2;
 }
 
 .white {
-  background-color: #fff;
+  background-color: #edece8;
   border: 2px solid #000;
 }
 
@@ -105,7 +106,7 @@ body {
 }
 
 .black {
-  background-color: #000;
+  background-color: #1e1b1e;
   border: 2px solid #fff;
 }
 

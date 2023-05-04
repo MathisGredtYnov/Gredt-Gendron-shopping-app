@@ -110,9 +110,9 @@ function changeImage(img, newSrc) {
 function toggleCart(){
     cartCtn.classList.toggle("open_cart");
     if (cartCtn.classList.contains("open_cart")){
-        carIcon.src = "../ASSETS/IMG/cross.png";
+        carIcon.src = "ASSETS/IMG/close.svg";
     } else {
-        carIcon.src = "../ASSETS/IMG/cart.png";
+        carIcon.src = "ASSETS/IMG/cart.png";
     }
 }
 
