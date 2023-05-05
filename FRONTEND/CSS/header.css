@@ -44,3 +44,132 @@ a {
     text-decoration: none;
     color: #000000;
 }
+
+.cart_ctn {
+    background-color: #56504e;
+    position: absolute;
+    top: 0;
+    right: -500px;
+    width: 500px;
+    height: auto;
+    max-width: 100vw;
+    min-height: 864px;
+    z-index: 10;
+    margin-top: 75px;
+    transition: all 0.5s ease-in-out;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .cart_icon {
+    height: 50px;
+    width: 50px;
+    z-index: 900;
+  }
+  
+  .open_cart {
+    right: 0;
+  }
+  
+  .cart_item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .cart_item img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+  }
+  
+  .cart_counter {
+    display: inline-block;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    margin-right: 10px;
+    padding: 5px 10px;
+  }
+  
+  .cart_counter button {
+    background-color: white;
+    border: 1px solid #ccc;
+    color: #333;
+    cursor: pointer;
+    font-size: 18px;
+    height: 30px;
+    margin: 0 5px;
+    padding: 0;
+    width: 30px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .cart_counter button:hover {
+    background-color: #ccc;
+    color: #fff;
+    border-color: #aaa;
+    transform: translateY(-2px);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  .supr {
+    padding: 5px;
+  }
+  
+.cart_description button, .container_panier button {
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    height: 30px;
+    padding: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.cart_description button:hover {
+    background-color: #d32f2f;
+    transform: translateY(-2px);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.total_price {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 50%;
+    align-self: center;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+  
+.commander {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 50%;
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+.commander:hover {
+    background-color: #3e8e41;
+    transform: translateY(-3px);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}

@@ -14,6 +14,19 @@ document.querySelector(".color_picker_ctn").addEventListener("change", GetSelect
 document.querySelector(".sexe_picker_ctn").addEventListener("change", GetSelectedValue);
 document.querySelector(".price_picker_ctn").addEventListener("change", GetSelectedOrder);
 
+    
+function GetAllPantalons() {
+    fetch(url + "/pantalons")
+        .then((response) => response.json())
+        .then((data) => {
+            pantalons = data.Femme.pantalons.concat(data.Homme.pantalons);
+            filteredPantalons = pantalons;
+        })
+        .catch(error => {
+            console.log(error);
+        })
+}
+
 GetAllPantalons();
 setTimeout(() => {
     DisplayPantalons();
@@ -46,34 +59,15 @@ function GetSelectedValue() {
 //SortByPrice
 function GetSelectedOrder() {
     let selected_price = document.querySelector(".price_picker_ctn input:checked").value;
-    console.log(selected_price)
     if (selected_price === "ascending") {
-        console.log(filteredPantalons)
-        console.log("tri croissant")
         filteredPantalons.sort((a, b) => calculateTotalPriceWithReduction(a) - calculateTotalPriceWithReduction(b));
-        console.log(filteredPantalons)
         DisplayPantalons();
     } else if (selected_price === "descending") {
-        console.log("tri decroissant")
         filteredPantalons.sort((a, b) => calculateTotalPriceWithReduction(b) - calculateTotalPriceWithReduction(a));
         DisplayPantalons();
     } else {
         alert("c'est pas bien de bidouiller le code")
     }
-}
-    
-
-
-function GetAllPantalons() {
-    fetch(url + "/pantalons")
-        .then((response) => response.json())
-        .then((data) => {
-            pantalons = data.Femme.pantalons.concat(data.Homme.pantalons);
-            filteredPantalons = pantalons;
-        })
-        .catch(error => {
-            console.log(error);
-        })
 }
 
 // Displaying data from the server
