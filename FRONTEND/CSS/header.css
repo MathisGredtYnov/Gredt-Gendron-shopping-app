@@ -1,6 +1,6 @@
 /* header */
 .header {
-    background-color: #56504e;
+    background-color: #5f0000;
     color: #ffffff;
     padding: 10px;
     height: 75px;
@@ -16,7 +16,7 @@
 .logo p {
     font-weight: 700;
     font-size: 2.8em;
-    color: #000000;
+    color: #ffffff;
 }
 .logo img {
     padding-right: 10px;
@@ -46,7 +46,7 @@ a {
 }
 
 .cart_ctn {
-    background-color: #56504e;
+    background-color: white;
     position: absolute;
     top: 0;
     right: -500px;
@@ -91,7 +91,7 @@ a {
   
   .cart_counter {
     display: inline-block;
-    color: white;
+    color: #5f0000;
     font-size: 15px;
     text-align: center;
     margin-right: 10px;
@@ -101,7 +101,7 @@ a {
   .cart_counter button {
     background-color: white;
     border: 1px solid #ccc;
-    color: #333;
+    color: #f9a828;
     cursor: pointer;
     font-size: 18px;
     height: 30px;
@@ -124,7 +124,7 @@ a {
   }
   
 .cart_description button, .container_panier button {
-    background-color: #4caf50;
+    background-color: #5f0000;
     border: none;
     border-radius: 5px;
     color: #fff;
@@ -142,7 +142,7 @@ a {
 }
 
 .total_price {
-    background-color: #4caf50;
+    background-color: #5f0000;
     color: white;
     border: none;
     border-radius: 5px;
@@ -156,7 +156,7 @@ a {
 }
   
 .commander {
-    background-color: #4caf50;
+    background-color: #5f0000;
     color: white;
     border: none;
     border-radius: 5px;
@@ -169,7 +169,7 @@ a {
 }
 
 .commander:hover {
-    background-color: #3e8e41;
+    background-color: #ffa200;
     transform: translateY(-3px);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }

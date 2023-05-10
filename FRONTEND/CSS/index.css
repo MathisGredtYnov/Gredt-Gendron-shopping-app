@@ -76,7 +76,7 @@ body {
 
 .color_picker_ctn > input:checked + label {
   transform: translateY(-2px);
-  border: 1px solid #4CAF50;
+  border: 1px solid #ffa200;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3), 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
@@ -131,7 +131,7 @@ body {
   font-size: 14px;
   background-color: #fff;
   color: #333;
-  border: 2px solid #4caf50;
+  border: 2px solid #ffa200;
   border-radius: 5px;
   padding: 10px 20px;
   transition: all 0.3s ease-in-out;
@@ -139,14 +139,14 @@ body {
   }
   
   .sexe_picker_ctn input:checked + label {
-  background-color: #4caf50;
+  background-color: #5f0000;
   color: #fff;
   }
   
   .sexe_picker_ctn label:hover {
-  background-color: #4caf50;
+  background-color: #ffa200;
   color: #fff;
-  border-color: #4caf50;
+  border-color: #ffa200;
   }
 
   .price_picker_ctn {
@@ -176,7 +176,7 @@ body {
   
   .price_picker_ctn input:checked + label {
     transform: translateY(-2px);
-    border: 1px solid #4CAF50;
+    border: 1px solid #5f0000;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3), 0 0 6px rgba(0, 0, 0, 0.3);
   }
   
@@ -265,7 +265,7 @@ body {
 }
 
 .pantalon_description button {
-  background-color: #4CAF50;
+  background-color: #5f0000;
   color: white;
   border: none;
   border-radius: 5px;
@@ -275,7 +275,7 @@ body {
 }
 
 .pantalon_description button:hover {
-  background-color: #3e8e41;
+  background-color: #ffa200;
   transform: translateY(-3px);
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }

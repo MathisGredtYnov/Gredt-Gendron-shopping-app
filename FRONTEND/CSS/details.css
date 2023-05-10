@@ -38,7 +38,7 @@ body {
 /*carrousel*/
 
 .container_carrousel {
-    background-color: #56504e;
+    background-color: #ffffff;
     position: relative;
     display: flex;
     align-items: center;
@@ -87,7 +87,7 @@ body {
 }
 
 .container_detail {
-    background-color: #56504e;
+    background-color: #ffffff;
     color:#ffffff;
     height: 700px;
     width: 800px;
@@ -172,7 +172,7 @@ body {
 }
 
 .ajouter-au-panier-btn, .continuer-achats-btn {
-    background-color: #4caf50;
+    background-color: #5f0000;
     border: none;
     border-radius: 5px;
     color: #fff;
@@ -214,7 +214,7 @@ body {
   }
   
   .container_description a {
-    color: #4caf50;
+    color: #5f0000;
     text-decoration: none;
   }
   
@@ -223,7 +223,7 @@ body {
   }
 
   .full-description-btn {
-    background-color: #4caf50;
+    background-color: #5f0000;
     border: none;
     border-radius: 5px;
     color: #fff;
