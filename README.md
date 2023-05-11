@@ -22,4 +22,16 @@
 **Contribution :**
 
     Adrien Gendron :
+    - Création de la page détails 
+    - Stylisation de la page détails
+    - Création et stylisation de la page panier (supprimé après vérification de la consigne)
+    - Remplissage de la base de données
+    - Création de la DA du site en général
+    - Création du README
+
     Mathis Gredt : 
+    - Création de la page index
+    - Stylisation de la page index
+    - Création de l'entièreté du JavaScript
+    - Création de la bse de données
+    - Création de la documentation de l'API
